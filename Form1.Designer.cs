@@ -29,22 +29,25 @@ namespace Ejercicio2___Guía5_MM200149
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtcarnet = new System.Windows.Forms.MaskedTextBox();
+            this.txtnombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtcorreo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtresponsables = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -56,6 +59,17 @@ namespace Ejercicio2___Guía5_MM200149
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 100);
             this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label1.Location = new System.Drawing.Point(39, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(548, 37);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Bienvenido al Ejercicio 2 de la guía 5 MM200149";
             // 
             // button1
             // 
@@ -70,17 +84,6 @@ namespace Ejercicio2___Guía5_MM200149
             this.button1.Text = "Salir";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(39, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(548, 37);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenido al Ejercicio 2 de la guía 5 MM200149";
             // 
             // label2
             // 
@@ -114,20 +117,22 @@ namespace Ejercicio2___Guía5_MM200149
             this.label4.Text = "Ingrese los datos del estudiante al que desea acceder";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // maskedTextBox1
+            // txtcarnet
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(241, 238);
-            this.maskedTextBox1.Mask = "LL - 000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(150, 36);
-            this.maskedTextBox1.TabIndex = 6;
+            this.txtcarnet.Location = new System.Drawing.Point(241, 238);
+            this.txtcarnet.Mask = "LL000000";
+            this.txtcarnet.Name = "txtcarnet";
+            this.txtcarnet.Size = new System.Drawing.Size(150, 36);
+            this.txtcarnet.TabIndex = 6;
             // 
-            // textBox1
+            // txtnombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(241, 186);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 36);
-            this.textBox1.TabIndex = 7;
+            this.txtnombre.Location = new System.Drawing.Point(241, 186);
+            this.txtnombre.Name = "txtnombre";
+            this.txtnombre.Size = new System.Drawing.Size(150, 36);
+            this.txtnombre.TabIndex = 7;
+            this.txtnombre.TextChanged += new System.EventHandler(this.txtnombre_TextChanged);
+            this.txtnombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // label5
             // 
@@ -139,12 +144,13 @@ namespace Ejercicio2___Guía5_MM200149
             this.label5.TabIndex = 8;
             this.label5.Text = "Correo Electrónico";
             // 
-            // textBox2
+            // txtcorreo
             // 
-            this.textBox2.Location = new System.Drawing.Point(241, 290);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 36);
-            this.textBox2.TabIndex = 9;
+            this.txtcorreo.Location = new System.Drawing.Point(241, 290);
+            this.txtcorreo.Name = "txtcorreo";
+            this.txtcorreo.Size = new System.Drawing.Size(220, 36);
+            this.txtcorreo.TabIndex = 9;
+            this.txtcorreo.Leave += new System.EventHandler(this.txtcorreo_Leave);
             // 
             // label6
             // 
@@ -173,12 +179,13 @@ namespace Ejercicio2___Guía5_MM200149
             this.label7.TabIndex = 12;
             this.label7.Text = "Responsables";
             // 
-            // textBox3
+            // txtresponsables
             // 
-            this.textBox3.Location = new System.Drawing.Point(242, 394);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(113, 36);
-            this.textBox3.TabIndex = 13;
+            this.txtresponsables.Location = new System.Drawing.Point(242, 394);
+            this.txtresponsables.Name = "txtresponsables";
+            this.txtresponsables.Size = new System.Drawing.Size(113, 36);
+            this.txtresponsables.TabIndex = 13;
+            this.txtresponsables.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtresponsables_KeyPress);
             // 
             // button2
             // 
@@ -194,6 +201,10 @@ namespace Ejercicio2___Guía5_MM200149
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
@@ -201,14 +212,14 @@ namespace Ejercicio2___Guía5_MM200149
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
             this.ClientSize = new System.Drawing.Size(626, 473);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtresponsables);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtcorreo);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtnombre);
+            this.Controls.Add(this.txtcarnet);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -223,6 +234,7 @@ namespace Ejercicio2___Guía5_MM200149
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,15 +248,16 @@ namespace Ejercicio2___Guía5_MM200149
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.MaskedTextBox txtcarnet;
+        private System.Windows.Forms.TextBox txtnombre;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtcorreo;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtresponsables;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
