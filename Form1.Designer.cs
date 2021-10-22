@@ -186,7 +186,7 @@ namespace Ejercicio2___Guía5_MM200149
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("Segoe Print", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Control;
-            this.button2.Location = new System.Drawing.Point(471, 171);
+            this.button2.Location = new System.Drawing.Point(471, 172);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 51);
             this.button2.TabIndex = 14;
