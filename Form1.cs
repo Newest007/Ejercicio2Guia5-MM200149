@@ -46,10 +46,15 @@ namespace Ejercicio2___Guía5_MM200149
             else
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtcarnet.Clear();
+                /*txtcarnet.Clear();
                 txtcorreo.Clear();
                 txtnombre.Clear();
                 txtresponsables.Clear();
+                */
+                NotasEstudiante notasestudiante = new NotasEstudiante();
+                this.Hide();
+                notasestudiante.Show();
+                notasestudiante.label2.Text = txtnombre.Text;
             }
 
             
@@ -167,6 +172,11 @@ namespace Ejercicio2___Guía5_MM200149
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
