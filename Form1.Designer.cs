@@ -168,6 +168,8 @@ namespace Ejercicio2___Guía5_MM200149
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(326, 36);
             this.dateTimePicker1.TabIndex = 11;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateTimePicker1.Leave += new System.EventHandler(this.dateTimePicker1_Leave);
             // 
             // label7
             // 

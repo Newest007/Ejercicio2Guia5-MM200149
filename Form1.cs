@@ -35,25 +35,37 @@ namespace Ejercicio2___Guía5_MM200149
 
         private void button2_Click(object sender, EventArgs e)
         {
+            BorrarMensajesError();
+            DateTime fechanacimiento = dateTimePicker1.Value;
+            int años = System.DateTime.Now.Year - fechanacimiento.Year;
+
+            if (años <= 0) 
+            {
+                MessageBox.Show("Debe de colocar una fecha de nacimiento válida","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Los datos se han ingresado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtcarnet.Clear();
+                txtcorreo.Clear();
+                txtnombre.Clear();
+                txtresponsables.Clear();
+            }
+
+            
 
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            if (char.IsLetter(e.KeyChar)) { e.Handled = false; }
 
-            else if(char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
 
-            else if(char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            else if (char.IsControl(e.KeyChar)) { e.Handled = false; }
+
+
+            else if (char.IsSeparator(e.KeyChar)) { e.Handled = false; }
+
 
             else
             {
@@ -69,25 +81,19 @@ namespace Ejercicio2___Guía5_MM200149
 
         private void txtresponsables_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (char.IsLetter(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            if (char.IsLetter(e.KeyChar)) { e.Handled = false; }
 
-            else if (char.IsControl(e.KeyChar))
-            {
-                e.Handled = false;
-            }
 
-            else if (char.IsSeparator(e.KeyChar))
-            {
-                e.Handled = false;
-            }
+            else if (char.IsControl(e.KeyChar)) { e.Handled = false; }
+
+
+            else if (char.IsSeparator(e.KeyChar)) { e.Handled = false; }
+            
 
             else
             {
                 e.Handled = true;
-                errorProvider1.SetError(txtnombre, "Debe de ingresar el nombre del responsable");
+                errorProvider1.SetError(txtresponsables, "Debe de ingresar el nombre del responsable");
             }
         }
 
@@ -116,7 +122,7 @@ namespace Ejercicio2___Guía5_MM200149
         */
 
 
-        //Otra manero y da el mismo resultado
+        //Otra manera y da el mismo resultado
         static bool validarEmail(string email)
         {
             try
@@ -134,16 +140,15 @@ namespace Ejercicio2___Guía5_MM200149
 
         private void BorrarMensajesError()
         {
-
+            errorProvider1.SetError(txtnombre, "");
+            errorProvider1.SetError(txtcorreo, "");
+            errorProvider1.SetError(txtresponsables, "");
         }
 
         private void txtcorreo_Leave(object sender, EventArgs e)
         {
-            if(validarEmail(txtcorreo.Text))
-            {
-
-            }
-
+            if (validarEmail(txtcorreo.Text)) { }
+            
             else
             {
                 errorProvider1.SetError(txtcorreo, "Dirección de correo no válido");
@@ -151,6 +156,16 @@ namespace Ejercicio2___Guía5_MM200149
                 txtcorreo.Focus();
             }
 
+
+        }
+
+        private void dateTimePicker1_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
