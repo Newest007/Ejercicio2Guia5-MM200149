@@ -33,7 +33,7 @@ namespace Ejercicio2___Guía5_MM200149
 
             else
             {
-                if (txtnota1.Text.Contains(" ") || txtnota2.Text.Contains(" ") || txtnota3.Text.Contains(" "))
+                if (txtnota1.Text.Contains(" ") || txtnota2.Text.Contains(" ") || txtnota3.Text.Contains(" ") || txtnota1.Text.Contains(". ") || txtnota2.Text.Contains(". ") || txtnota3.Text.Contains(". "))
                 {
                     MessageBox.Show("El promedio de las notas se desarrollara pero los espacios en blanco se tomarán como ceros", "Cuidado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
