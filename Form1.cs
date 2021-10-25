@@ -11,9 +11,9 @@ using System.Text.RegularExpressions;
 
 namespace Ejercicio2___Guía5_MM200149
 {
-    public partial class Form1 : Form
+    public partial class FrmPrincipal : Form
     {
-        public Form1()
+        public FrmPrincipal()
         {
             InitializeComponent();
         }
@@ -25,6 +25,10 @@ namespace Ejercicio2___Guía5_MM200149
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            txtnombre.Clear();
+            txtcorreo.Clear();
+            txtcarnet.Clear();
+            txtresponsables.Clear();
 
         }
 
@@ -43,6 +47,18 @@ namespace Ejercicio2___Guía5_MM200149
             {
                 MessageBox.Show("Debe de colocar una fecha de nacimiento válida","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+
+            if(txtcarnet.Text.Contains(" "))
+            {
+                MessageBox.Show("No debe de dejar espacios en blanco en el carnet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+            if (txtnombre.Text == ""  || txtcorreo.Text == "" || txtcarnet.Text == "" || txtresponsables.Text == "")
+            {
+                MessageBox.Show("No debe de dejar ningún espacio en blanco", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             else
             {
                 MessageBox.Show("Los datos se han ingresado correctamente", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -56,6 +72,8 @@ namespace Ejercicio2___Guía5_MM200149
                 notasestudiante.Show();
                 notasestudiante.label2.Text = txtnombre.Text;
             }
+
+            
 
             
 
